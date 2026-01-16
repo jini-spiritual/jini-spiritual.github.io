@@ -6,178 +6,215 @@
 <title>ആത്മീയ വഴികൾ</title>
 
 <style>
-/* RESET */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background:#000;
+    color:#f5f5f5;
+    overflow-x:hidden;
 }
 
-/* BODY */
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover no-repeat fixed;
-    color: #f5f5f5;
-    overflow-x: hidden;
+/* PARALLAX BACKGROUND */
+.parallax{
+    background:url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover no-repeat fixed;
+    min-height:100vh;
+    position:relative;
 }
 
 /* DARK OVERLAY */
-.overlay {
-    min-height: 100vh;
-    background: radial-gradient(circle at top, rgba(255,215,150,0.15), rgba(0,0,0,0.92) 70%);
-    position: relative;
+.overlay{
+    background:radial-gradient(circle at top, rgba(255,215,150,0.15), rgba(0,0,0,0.92) 70%);
+    min-height:100vh;
+    position:relative;
 }
 
 /* LIGHT RAYS */
-.overlay::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg,
+.overlay::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg,
         transparent 30%,
-        rgba(255,215,150,0.12) 50%,
+        rgba(255,215,150,0.15) 50%,
         transparent 70%);
-    animation: rays 12s linear infinite;
-    pointer-events: none;
+    animation:rays 14s linear infinite;
+    pointer-events:none;
 }
 
-@keyframes rays {
-    from { transform: translateX(-100%); }
-    to   { transform: translateX(100%); }
+@keyframes rays{
+    from{transform:translateX(-120%)}
+    to{transform:translateX(120%)}
+}
+
+/* CROSS SILHOUETTE */
+.cross{
+    position:absolute;
+    top:80px;
+    right:40px;
+    width:120px;
+    height:200px;
+    opacity:0.08;
+}
+.cross::before,
+.cross::after{
+    content:"";
+    position:absolute;
+    background:#ffd27d;
+}
+.cross::before{
+    width:30px;
+    height:200px;
+    left:45px;
+}
+.cross::after{
+    width:120px;
+    height:30px;
+    top:60px;
 }
 
 /* CONTAINER */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 70px 20px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:80px 20px;
+    text-align:center;
+    position:relative;
+    z-index:2;
 }
 
 /* TITLE */
-h1 {
-    font-size: clamp(36px, 6vw, 52px);
-    color: #ffd27d;
-    margin-bottom: 12px;
+h1{
+    font-size:clamp(36px,6vw,52px);
+    color:#ffd27d;
+    margin-bottom:12px;
 }
 
-.subtitle {
-    font-size: 18px;
-    color: #ddd;
-    margin-bottom: 25px;
+.subtitle{
+    font-size:18px;
+    color:#ddd;
+    margin-bottom:30px;
 }
 
-/* BIBLE VERSE */
-.verse {
-    font-style: italic;
-    color: #f3c97a;
-    margin-bottom: 50px;
-    font-size: 17px;
+/* VERSE FADE */
+.verse{
+    font-style:italic;
+    color:#f3c97a;
+    font-size:17px;
+    margin-bottom:55px;
+    animation:fadeVerse 6s ease-in-out infinite;
+}
+
+@keyframes fadeVerse{
+    0%{opacity:0}
+    20%{opacity:1}
+    80%{opacity:1}
+    100%{opacity:0}
 }
 
 /* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-    justify-items: center;
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:28px;
+    justify-items:center;
 }
 
-.card {
-    background: rgba(20,20,20,0.9);
-    border: 1px solid rgba(255,215,150,0.25);
-    padding: 28px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 280px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card{
+    background:rgba(20,20,20,0.9);
+    border:1px solid rgba(255,215,150,0.25);
+    padding:28px;
+    border-radius:16px;
+    max-width:280px;
+    width:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    transition:0.3s;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(255,215,150,0.25);
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(255,215,150,0.25);
 }
 
-.card h3 {
-    color: #ffd27d;
-    margin-bottom: 10px;
+.card h3{
+    color:#ffd27d;
+    margin-bottom:10px;
 }
 
-.card p {
-    color: #ccc;
-    font-size: 15px;
-    line-height: 1.5;
+.card p{
+    color:#ccc;
+    font-size:15px;
+    line-height:1.5;
 }
 
-/* BUTTON */
-.card a {
-    display: inline-block;
-    margin-top: 16px;
-    padding: 10px 22px;
-    background: linear-gradient(135deg, #ffd27d, #c89b3c);
-    color: #111;
-    text-decoration: none;
-    border-radius: 22px;
-    font-weight: bold;
-    transition: opacity 0.3s ease;
+.card a{
+    display:inline-block;
+    margin-top:16px;
+    padding:10px 24px;
+    background:linear-gradient(135deg,#ffd27d,#c89b3c);
+    color:#111;
+    text-decoration:none;
+    border-radius:22px;
+    font-weight:bold;
 }
 
-.card a:hover {
-    opacity: 0.85;
-}
-
-/* MOBILE FIX */
-@media (max-width: 600px) {
-    .container {
-        padding: 60px 16px;
-    }
-    .verse {
-        font-size: 16px;
-    }
+/* MOBILE */
+@media(max-width:600px){
+    .cross{display:none}
+    .container{padding:65px 16px}
 }
 </style>
 </head>
 
 <body>
+
+<!-- BACKGROUND MUSIC -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_1c9b9b82e2.mp3" type="audio/mpeg">
+</audio>
+
+<div class="parallax">
 <div class="overlay">
-    <div class="container">
 
-        <h1>ആത്മീയ വഴികൾ</h1>
-        <p class="subtitle">
-            ദൈവത്തെ അറിയാൻ, ആത്മാവിനെ ശക്തമാക്കാൻ, വിശ്വാസത്തിൽ വളരാൻ
-        </p>
+<div class="cross"></div>
 
-        <p class="verse">
-            “നിന്റെ വചനം എന്റെ കാൽക്കു ദീപവും എന്റെ പാതയ്ക്കു വെളിച്ചവും ആകുന്നു.”  
-            <br>— സങ്കീർത്തനം 119:105
-        </p>
+<div class="container">
 
-        <div class="cards">
+<h1>ആത്മീയ വഴികൾ</h1>
 
-            <div class="card">
-                <h3>📖 Articles</h3>
-                <p>ബൈബിൾ, ചരിത്രം, ആത്മീയ ചിന്തകൾ</p>
-                <a href="articles.html">Read</a>
-            </div>
+<p class="subtitle">
+ദൈവത്തെ അറിയാൻ, ആത്മാവിനെ ശക്തമാക്കാൻ, വിശ്വാസത്തിൽ വളരാൻ
+</p>
 
-            <div class="card">
-                <h3>🎥 Videos</h3>
-                <p>YouTube ആത്മീയ വീഡിയോ ഉള്ളടക്കം</p>
-                <a href="videos.html">Watch</a>
-            </div>
+<p class="verse">
+“നിന്റെ വചനം എന്റെ കാൽക്കു ദീപവും എന്റെ പാതയ്ക്കു വെളിച്ചവും ആകുന്നു.”  
+<br>— സങ്കീർത്തനം 119:105
+</p>
 
-            <div class="card">
-                <h3>🌱 Story</h3>
-                <p>ഹൃദയത്തെ സ്പർശിക്കുന്ന ആത്മീയ കഥകൾ</p>
-                <a href="story.html">Read</a>
-            </div>
+<div class="cards">
 
-        </div>
-
-    </div>
+<div class="card">
+<h3>📖 Articles</h3>
+<p>ബൈബിൾ, ചരിത്രം, ആത്മീയ ചിന്തകൾ</p>
+<a href="articles.html">Read</a>
 </div>
+
+<div class="card">
+<h3>🎥 Videos</h3>
+<p>YouTube ആത്മീയ വീഡിയോ ഉള്ളടക്കം</p>
+<a href="videos.html">Watch</a>
+</div>
+
+<div class="card">
+<h3>🌱 Story</h3>
+<p>ഹൃദയത്തെ സ്പർശിക്കുന്ന ആത്മീയ കഥകൾ</p>
+<a href="story.html">Read</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
 </body>
 </html>
