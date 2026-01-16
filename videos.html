@@ -9,160 +9,134 @@
 <meta name="description" content="Bible based spiritual articles, videos and stories to strengthen faith and soul.">
 <meta name="keywords" content="Bible, Jesus, Christian, Spiritual, Faith, Malayalam Christian">
 <meta name="author" content="Athemiya Vazhikal">
-<meta property="og:title" content="ആത്മീയ വഴികൾ">
-<meta property="og:description" content="Faith. Truth. Spiritual Growth.">
-<meta property="og:type" content="website">
 
 <style>
 *{box-sizing:border-box}
-
 body{
-    margin:0;
-    font-family:Segoe UI,Arial,sans-serif;
-    background:#000;
-    color:#fff;
-    overflow-x:hidden;
+ margin:0;
+ font-family:Segoe UI,Arial,sans-serif;
+ background:#000;
+ color:#fff;
+ overflow-x:hidden;
 }
 
-/* 🔄 LOADING */
+/* 🔄 LOADER */
 #loader{
-    position:fixed;
-    inset:0;
-    background:#000;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    z-index:9999;
+ position:fixed;inset:0;
+ background:#000;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ z-index:9999;
 }
 .loader-circle{
-    width:60px;
-    height:60px;
-    border:4px solid #333;
-    border-top:4px solid #f5d76e;
-    border-radius:50%;
-    animation:spin 1s linear infinite;
+ width:60px;height:60px;
+ border:4px solid #333;
+ border-top:4px solid #f5d76e;
+ border-radius:50%;
+ animation:spin 1s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* 🌌 PARALLAX */
 .parallax{
-    position:fixed;
-    inset:0;
-    background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
-    transform:scale(1.1);
-    z-index:-3;
+ position:fixed;inset:0;
+ background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
+ transform:scale(1.1);
+ z-index:-3;
 }
 
 /* ✝️ CROSS */
 .cross{
-    position:fixed;
-    inset:0;
-    background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Christian_cross.svg/512px-Christian_cross.svg.png')
-    center/35% no-repeat;
-    opacity:0.08;
-    z-index:-2;
+ position:fixed;inset:0;
+ background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Christian_cross.svg/512px-Christian_cross.svg.png')
+ center/35% no-repeat;
+ opacity:.08;
+ z-index:-2;
 }
 
 /* 🌙 OVERLAY */
 .overlay{
-    background:rgba(0,0,0,0.65);
-    min-height:100vh;
+ background:rgba(0,0,0,.65);
+ min-height:100vh;
 }
 
 .container{
-    max-width:900px;
-    margin:auto;
-    padding:70px 20px;
-    text-align:center;
+ max-width:900px;
+ margin:auto;
+ padding:70px 20px;
+ text-align:center;
 }
 
 /* ✨ VERSE */
 .verse{
-    color:#f5d76e;
-    font-size:20px;
-    margin:25px 0 50px;
-    animation:fade 2s ease;
+ color:#f5d76e;
+ font-size:20px;
+ margin:25px 0 50px;
+ animation:fade 2s ease;
 }
 @keyframes fade{from{opacity:0}to{opacity:1}}
 
 /* 🔤 LANGUAGE */
 .lang-btn{
-    position:fixed;
-    top:20px;
-    right:20px;
-    background:#111;
-    color:#f5d76e;
-    border:none;
-    padding:8px 14px;
-    border-radius:8px;
-    cursor:pointer;
+ position:fixed;
+ top:20px;right:20px;
+ background:#111;color:#f5d76e;
+ border:none;padding:8px 14px;
+ border-radius:8px;
+ cursor:pointer;
 }
 
 /* CARDS */
 .cards{
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
-    justify-content:center;
+ display:flex;
+ gap:25px;
+ flex-wrap:wrap;
+ justify-content:center;
 }
 .card{
-    background:#fff;
-    color:#111;
-    width:260px;
-    padding:28px;
-    border-radius:14px;
-    box-shadow:0 0 30px rgba(255,215,100,.35);
-    transition:.4s;
+ background:#fff;
+ color:#111;
+ width:260px;
+ padding:28px;
+ border-radius:14px;
+ box-shadow:0 0 30px rgba(255,215,100,.35);
+ transition:.4s;
 }
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 50px rgba(255,215,100,.8);
+ transform:translateY(-10px);
+ box-shadow:0 0 50px rgba(255,215,100,.8);
 }
 .card a{
-    display:inline-block;
-    margin-top:12px;
-    padding:10px 18px;
-    background:#111;
-    color:#f5d76e;
-    text-decoration:none;
-    border-radius:8px;
-}
-
-/* 📺 YOUTUBE */
-.video{
-    margin:70px auto;
-    max-width:700px;
-    aspect-ratio:16/9;
-}
-iframe{
-    width:100%;
-    height:100%;
-    border-radius:16px;
+ display:inline-block;
+ margin-top:12px;
+ padding:10px 18px;
+ background:#111;
+ color:#f5d76e;
+ text-decoration:none;
+ border-radius:8px;
 }
 
 /* 🔔 MUSIC */
 .music-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#111;
-    color:#f5d76e;
-    border:none;
-    padding:12px;
-    border-radius:50%;
-    cursor:pointer;
+ position:fixed;
+ bottom:20px;right:20px;
+ background:#111;color:#f5d76e;
+ border:none;
+ padding:12px;
+ border-radius:50%;
+ cursor:pointer;
 }
 
 /* 📱 MOBILE */
 @media(max-width:600px){
-    .card{width:100%}
+ .card{width:100%}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 🔄 LOADER -->
 <div id="loader"><div class="loader-circle"></div></div>
 
 <div class="parallax"></div>
@@ -185,28 +159,25 @@ iframe{
 <div class="verse" id="verse"></div>
 
 <div class="cards">
+
 <div class="card">
-<h3 id="a1">📖 Articles</h3>
-<p id="a1d">ബൈബിൾ, ആത്മീയ പഠനങ്ങൾ</p>
-<a href="#">Read</a>
+<h3>📖 Articles</h3>
+<p>ബൈബിൾ, ആത്മീയ പഠനങ്ങൾ</p>
+<a href="articles.html">Read</a>
 </div>
 
 <div class="card">
-<h3 id="a2">🎥 Videos</h3>
-<p id="a2d">ആത്മീയ YouTube ഉള്ളടക്കം</p>
-<a href="#">Watch</a>
+<h3>🎥 Videos</h3>
+<p>ആത്മീയ YouTube ഉള്ളടക്കം</p>
+<a href="videos.html">Watch</a>
 </div>
 
 <div class="card">
-<h3 id="a3">🌱 Stories</h3>
-<p id="a3d">ഹൃദയസ്പർശിയായ കഥകൾ</p>
-<a href="#">Read</a>
-</div>
+<h3>🌱 Stories</h3>
+<p>ഹൃദയസ്പർശിയായ കഥകൾ</p>
+<a href="story.html">Read</a>
 </div>
 
-<!-- 📺 YOUTUBE AUTO EMBED -->
-<div class="video">
-<iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
 </div>
 
 </div>
@@ -214,7 +185,7 @@ iframe{
 
 <script>
 /* 🔄 LOADER */
-window.onload=()=>document.getElementById("loader").style.display="none";
+window.onload=()=>loader.style.display="none";
 
 /* 📖 VERSES */
 const verses=[
@@ -222,14 +193,12 @@ const verses=[
 "ദൈവം സ്നേഹമാണ്.",
 "എന്നിൽ വിശ്വസിക്കുന്നവന് ജീവൻ ഉണ്ടാകും."
 ];
-document.getElementById("verse").innerText=
-verses[Math.floor(Math.random()*verses.length)];
+verse.innerText=verses[Math.floor(Math.random()*verses.length)];
 
 /* 🔔 MUSIC */
-const m=document.getElementById("music");
 let play=false;
 function toggleMusic(){
- play?m.pause():m.play();
+ play?music.pause():music.play();
  play=!play;
  event.target.innerText=play?"🔇":"🔊";
 }
@@ -238,8 +207,8 @@ function toggleMusic(){
 let ml=true;
 function toggleLang(){
  ml=!ml;
- document.getElementById("title").innerText=ml?"ആത്മീയ വഴികൾ":"Spiritual Paths";
- document.getElementById("subtitle").innerText=ml?
+ title.innerText=ml?"ആത്മീയ വഴികൾ":"Spiritual Paths";
+ subtitle.innerText=ml?
  "വിശ്വാസത്തിൽ വളരാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ":
  "Grow in faith • Strengthen the soul";
  event.target.innerText=ml?"EN":"ML";
