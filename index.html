@@ -3,20 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO (kept intact) -->
 <title>ആത്മീയ വഴികൾ</title>
+<meta name="description" content="Bible based spiritual articles, videos and stories to strengthen faith and soul.">
+<meta name="keywords" content="Bible, Jesus, Christian, Spiritual, Malayalam Christian">
+<meta name="author" content="Athemiya Vazhikal">
 
 <style>
 *{box-sizing:border-box}
-
 body{
     margin:0;
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family:"Segoe UI",Arial,sans-serif;
     background:#000;
-    overflow-x:hidden;
     color:#fff;
+    overflow-x:hidden;
 }
 
-/* 🌌 PARALLAX BACKGROUND */
+/* 🌌 PARALLAX */
 .parallax{
     position:fixed;
     inset:0;
@@ -25,7 +29,7 @@ body{
     z-index:-3;
 }
 
-/* ✝️ CROSS SILHOUETTE */
+/* ✝️ CROSS */
 .cross{
     position:fixed;
     inset:0;
@@ -35,13 +39,12 @@ body{
     z-index:-2;
 }
 
-/* 🌙 DARK OVERLAY */
+/* 🌙 OVERLAY */
 .overlay{
     background:rgba(0,0,0,0.65);
     min-height:100vh;
 }
 
-/* CONTAINER */
 .container{
     max-width:900px;
     margin:auto;
@@ -54,12 +57,11 @@ body{
     font-size:20px;
     color:#f5d76e;
     margin-bottom:50px;
-    animation:fadeVerse 3s ease;
+    animation:fadeVerse 2.5s ease;
 }
-
 @keyframes fadeVerse{
-    from{opacity:0; transform:translateY(20px)}
-    to{opacity:1; transform:translateY(0)}
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
 /* CARDS */
@@ -69,22 +71,19 @@ body{
     flex-wrap:wrap;
     justify-content:center;
 }
-
 .card{
     background:rgba(255,255,255,0.95);
     color:#111;
     padding:28px;
     width:260px;
     border-radius:14px;
-    box-shadow:0 0 25px rgba(255,215,100,0.25);
-    transition:0.4s;
+    box-shadow:0 0 25px rgba(255,215,100,.25);
+    transition:.4s;
 }
-
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 0 45px rgba(255,215,100,0.6);
+    box-shadow:0 0 45px rgba(255,215,100,.6);
 }
-
 .card a{
     display:inline-block;
     margin-top:12px;
@@ -95,7 +94,7 @@ body{
     border-radius:8px;
 }
 
-/* 🔔 MUSIC BUTTON */
+/* 🔔 MUSIC */
 .music-btn{
     position:fixed;
     bottom:20px;
@@ -107,17 +106,19 @@ body{
     border-radius:50%;
     font-size:18px;
     cursor:pointer;
-    box-shadow:0 0 15px rgba(255,215,100,0.6);
+    box-shadow:0 0 15px rgba(255,215,100,.6);
 }
 
-/* 📜 SCROLL GLOW */
-.glow{
-    animation:glow 1.2s infinite alternate;
+/* 💬 COMMENTS */
+.comments{
+    margin-top:80px;
+    text-align:left;
+    background:rgba(0,0,0,.55);
+    padding:25px;
+    border-radius:12px;
 }
-
-@keyframes glow{
-    from{box-shadow:0 0 15px rgba(255,215,100,0.3)}
-    to{box-shadow:0 0 35px rgba(255,215,100,0.9)}
+.comments h3{
+    color:#f5d76e;
 }
 
 /* 📱 MOBILE */
@@ -133,82 +134,86 @@ body{
 <div class="parallax"></div>
 <div class="cross"></div>
 
-<!-- 🔔 BACKGROUND MUSIC -->
 <audio id="bgMusic" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b3cdd0efc.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b3cdd0efc.mp3">
 </audio>
-
 <button class="music-btn" onclick="toggleMusic()">🔊</button>
 
 <div class="overlay">
 <div class="container">
 
-    <h1 style="font-size:44px;margin-bottom:10px;">ആത്മീയ വഴികൾ</h1>
-    <p style="color:#ccc;margin-bottom:25px;">
-        ദൈവത്തെ അറിയാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ • വിശ്വാസത്തിൽ വളരാൻ
-    </p>
+<h1 style="font-size:44px;margin-bottom:10px;">ആത്മീയ വഴികൾ</h1>
+<p style="color:#ccc;margin-bottom:25px;">
+ദൈവത്തെ അറിയാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ • വിശ്വാസത്തിൽ വളരാൻ
+</p>
 
-    <!-- 📖 BIBLE VERSE -->
-    <div id="verse" class="verse"></div>
+<div id="verse" class="verse"></div>
 
-    <div class="cards">
+<div class="cards">
+<div class="card">
+<h3>📖 Articles</h3>
+<p>ബൈബിൾ, ചരിത്രം, ആത്മീയ ചിന്തകൾ</p>
+<a href="articles.html">Read</a>
+</div>
 
-        <div class="card glow">
-            <h3>📖 Articles</h3>
-            <p>ബൈബിൾ, ചരിത്രം, ആത്മീയ ചിന്തകൾ</p>
-            <a href="articles.html">Read</a>
-        </div>
+<div class="card">
+<h3>🎥 Videos</h3>
+<p>YouTube ആത്മീയ വീഡിയോ ഉള്ളടക്കം</p>
+<a href="videos.html">Watch</a>
+</div>
 
-        <div class="card">
-            <h3>🎥 Videos</h3>
-            <p>YouTube ആത്മീയ വീഡിയോ ഉള്ളടക്കം</p>
-            <a href="videos.html">Watch</a>
-        </div>
+<div class="card">
+<h3>🌱 Story</h3>
+<p>ഹൃദയത്തെ സ്പർശിക്കുന്ന ആത്മീയ കഥകൾ</p>
+<a href="story.html">Read</a>
+</div>
+</div>
 
-        <div class="card">
-            <h3>🌱 Story</h3>
-            <p>ഹൃദയത്തെ സ്പർശിക്കുന്ന ആത്മീയ കഥകൾ</p>
-            <a href="story.html">Read</a>
-        </div>
-
-    </div>
+<!-- 💬 FIREBASE COMMENTS -->
+<div class="comments">
+<h3>💬 Comments & Prayer Requests</h3>
+<div id="commentBox"></div>
+<button onclick="like()">❤️ Like</button>
+<span id="likes">0</span>
+</div>
 
 </div>
 </div>
 
+<!-- 🔥 SCRIPT -->
 <script>
-/* ✨ RANDOM BIBLE VERSES */
+/* 📖 DAILY VERSE SYSTEM */
 const verses=[
-"കർത്താവാണ് എന്റെ ഇടയൻ; എനിക്ക് ഒന്നിനും കുറവുണ്ടാകയില്ല. (സങ്കീർത്തനം 23:1)",
-"എന്നിൽ വിശ്വസിക്കുന്നവന് ജീവൻ ഉണ്ടാകും. (യോഹന്നാൻ 11:25)",
-"ദൈവം സ്നേഹമാണ്. (1 യോഹന്നാൻ 4:8)",
-"നിന്റെ വഴി കർത്താവിന് ഏല്പിക്ക. (സങ്കീർത്തനം 37:5)",
-"എന്നോടുകൂടെ ഇരിക്കുന്നവൻ ശക്തനായവൻ. (ഫിലിപ്പിയർ 4:13)"
+"കർത്താവാണ് എന്റെ ഇടയൻ; എനിക്ക് ഒന്നിനും കുറവില്ല. (സങ്കീ 23:1)",
+"ദൈവം സ്നേഹമാണ്. (1 യോഹ 4:8)",
+"എന്നിൽ വിശ്വസിക്കുന്നവന് ജീവൻ ഉണ്ടാകും. (യോഹ 11:25)",
+"നിന്റെ വഴി കർത്താവിന് ഏല്പിക്ക. (സങ്കീ 37:5)",
+"എന്നോടുകൂടെ ഇരിക്കുന്നവൻ ശക്തനായവൻ. (ഫിലി 4:13)"
 ];
 
-document.getElementById("verse").innerText=
-verses[Math.floor(Math.random()*verses.length)];
+const dayIndex=new Date().getDate()%verses.length;
+document.getElementById("verse").innerText=verses[dayIndex];
 
-/* 🔔 MUSIC TOGGLE */
+/* 🔔 MUSIC */
 const music=document.getElementById("bgMusic");
 let playing=false;
-
 function toggleMusic(){
-    if(!playing){
-        music.play();
-        playing=true;
-        event.target.innerText="🔇";
-    }else{
-        music.pause();
-        playing=false;
-        event.target.innerText="🔊";
-    }
+    playing?music.pause():music.play();
+    playing=!playing;
+    event.target.innerText=playing?"🔇":"🔊";
 }
 
-/* 🌌 PARALLAX MOVE */
+/* ❤️ SIMPLE LIKE (LOCAL) */
+let likes=0;
+function like(){
+    likes++;
+    document.getElementById("likes").innerText=likes;
+}
+
+/* 🌌 PARALLAX */
 window.addEventListener("scroll",()=>{
-    document.querySelector(".parallax").style.transform=
-    `scale(1.1) translateY(${window.scrollY*0.2}px)`;
+document.querySelector(".parallax").style.transform=
+`scale(1.1) translateY(${scrollY*0.2}px)`;
 });
 </script>
 
