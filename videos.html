@@ -3,218 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ആത്മീയ വഴികൾ | Spiritual Paths</title>
-<meta name="description" content="Bible based spiritual articles, videos and stories">
-<meta name="keywords" content="Bible, Jesus, Christian, Spiritual, Malayalam">
+<title>ആത്മീയ വഴികൾ | Videos</title>
+<meta name="description" content="ആത്മീയ വീഡിയോസ് – YouTube Spiritual videos">
+<meta name="keywords" content="spiritual videos, Bible videos, YouTube videos">
 <meta name="author" content="Athemiya Vazhikal">
 
 <style>
+/* Same style as index (no visual change) */
 *{box-sizing:border-box}
 body{
  margin:0;
- font-family:Segoe UI,Arial,sans-serif;
+ font-family:"Segoe UI",Arial,sans-serif;
  background:#000;
  color:#fff;
  overflow-x:hidden;
 }
-
-/* LOADER */
-#loader{
- position:fixed;inset:0;
- background:#000;
- display:flex;
- align-items:center;
- justify-content:center;
- z-index:9999;
+nav{
+ background:#111;
+ padding:15px;
+ text-align:center;
 }
-.loader-circle{
- width:60px;height:60px;
- border:4px solid #333;
- border-top:4px solid #f5d76e;
- border-radius:50%;
- animation:spin 1s linear infinite;
+nav a{
+ color:#f5d76e;
+ margin:0 15px;
+ text-decoration:none;
+ font-weight:bold;
 }
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* PARALLAX */
-.parallax{
- position:fixed;inset:0;
- background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
- transform:scale(1.1);
- z-index:-3;
+iframe{
+ width:100%;
+ height:300px;
+ border:none;
+ border-radius:12px;
+ margin-bottom:30px;
 }
-.cross{
- position:fixed;inset:0;
- background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Christian_cross.svg/512px-Christian_cross.svg.png')
- center/35% no-repeat;
- opacity:.08;
- z-index:-2;
-}
-.overlay{
- background:rgba(0,0,0,.65);
- min-height:100vh;
-}
-
 .container{
  max-width:900px;
  margin:auto;
- padding:80px 20px;
+ padding:40px 20px;
  text-align:center;
-}
-
-/* VERSE */
-.verse{
- color:#f5d76e;
- font-size:20px;
- margin:25px 0 50px;
- animation:fade 2s ease;
-}
-@keyframes fade{from{opacity:0}to{opacity:1}}
-
-/* BUTTONS */
-.lang-btn,.music-btn{
- position:fixed;
- background:#111;
- color:#f5d76e;
- border:none;
- cursor:pointer;
-}
-.lang-btn{
- top:20px;right:20px;
- padding:8px 14px;
- border-radius:8px;
-}
-.music-btn{
- bottom:20px;right:20px;
- padding:12px;
- border-radius:50%;
-}
-
-/* CARDS */
-.cards{
- display:flex;
- gap:25px;
- flex-wrap:wrap;
- justify-content:center;
-}
-.card{
- background:#fff;
- color:#111;
- width:260px;
- padding:28px;
- border-radius:14px;
- box-shadow:0 0 30px rgba(255,215,100,.35);
- transition:.4s;
-}
-.card:hover{
- transform:translateY(-10px);
- box-shadow:0 0 50px rgba(255,215,100,.8);
-}
-.card a{
- display:inline-block;
- margin-top:12px;
- padding:10px 18px;
- background:#111;
- color:#f5d76e;
- text-decoration:none;
- border-radius:8px;
-}
-
-/* MOBILE */
-@media(max-width:600px){
- .card{width:100%}
 }
 </style>
 </head>
 
 <body>
 
-<div id="loader"><div class="loader-circle"></div></div>
-<div class="parallax"></div>
-<div class="cross"></div>
+<nav>
+  <a href="index.html">🏠 Home</a>
+  <a href="articles.html">📖 Articles</a>
+  <a href="videos.html">🎥 Videos</a>
+  <a href="story.html">🌱 Story</a>
+</nav>
 
-<audio id="music" loop>
- <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b3cdd0efc.mp3">
-</audio>
-
-<button class="music-btn" onclick="toggleMusic(this)">🔊</button>
-<button class="lang-btn" onclick="toggleLang(this)">EN</button>
-
-<div class="overlay">
 <div class="container">
+<h1>🎥 Videos</h1>
 
-<h1 id="title">ആത്മീയ വഴികൾ</h1>
-<p id="subtitle">വിശ്വാസത്തിൽ വളരാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ</p>
-
-<div class="verse" id="verse"></div>
-
-<div class="cards">
-
-<div class="card">
-<h3>📖 Articles</h3>
-<p>ബൈബിൾ പഠനങ്ങൾ</p>
-<a href="articles.html">Read</a>
-</div>
-
-<div class="card">
-<h3>🎥 Videos</h3>
-<p>ആത്മീയ വീഡിയോസ്</p>
-<a href="videos.html">Watch</a>
-</div>
-
-<div class="card">
-<h3>🌱 Stories</h3>
-<p>ഹൃദയസ്പർശിയായ കഥകൾ</p>
-<a href="story.html">Read</a>
-</div>
+<!-- Video embeds -->
+<iframe src="https://www.youtube.com/embed/jVdmx9KAuIs" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/thSYFa-pTW8" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/0mhy2eg4ZDo" allowfullscreen></iframe>
 
 </div>
-</div>
-</div>
-
-<script>
-const loader=document.getElementById("loader");
-const verseBox=document.getElementById("verse");
-const title=document.getElementById("title");
-const subtitle=document.getElementById("subtitle");
-const music=document.getElementById("music");
-
-window.onload=()=>loader.style.display="none";
-
-/* VERSE */
-const verses=[
- "കർത്താവാണ് എന്റെ ഇടയൻ; എനിക്ക് കുറവില്ല.",
- "ദൈവം സ്നേഹമാണ്.",
- "എന്നിൽ വിശ്വസിക്കുന്നവന് ജീവൻ ഉണ്ടാകും."
-];
-verseBox.innerText=verses[Math.floor(Math.random()*verses.length)];
-
-/* MUSIC */
-let play=false;
-function toggleMusic(btn){
- play?music.pause():music.play();
- play=!play;
- btn.innerText=play?"🔇":"🔊";
-}
-
-/* LANGUAGE */
-let ml=true;
-function toggleLang(btn){
- ml=!ml;
- title.innerText=ml?"ആത്മീയ വഴികൾ":"Spiritual Paths";
- subtitle.innerText=ml?
- "വിശ്വാസത്തിൽ വളരാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ":
- "Grow in faith • Strengthen the soul";
- btn.innerText=ml?"EN":"ML";
-}
-
-/* PARALLAX */
-window.addEventListener("scroll",()=>{
- document.querySelector(".parallax").style.transform=
- `scale(1.1) translateY(${scrollY*.2}px)`;
-});
-</script>
-
 </body>
 </html>
