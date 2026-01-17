@@ -19,7 +19,7 @@ body{
     overflow-x:hidden;
 }
 
-/* 🔄 LOADER (NEW – functional only) */
+/* 🔄 LOADER */
 #loader{
     position:fixed;
     inset:0;
@@ -30,8 +30,7 @@ body{
     z-index:9999;
 }
 #loader div{
-    width:50px;
-    height:50px;
+    width:50px;height:50px;
     border:4px solid #333;
     border-top:4px solid #f5d76e;
     border-radius:50%;
@@ -46,7 +45,7 @@ body{
     background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover no-repeat;
     transform:scale(1.1);
     z-index:-3;
-    pointer-events:none; /* ✅ FIX */
+    pointer-events:none;
 }
 
 /* ✝️ CROSS */
@@ -57,7 +56,7 @@ body{
     center/35% no-repeat;
     opacity:0.08;
     z-index:-2;
-    pointer-events:none; /* ✅ FIX */
+    pointer-events:none;
 }
 
 /* 🌙 OVERLAY */
@@ -66,6 +65,13 @@ body{
     min-height:100vh;
 }
 
+/* 🌟 HERO GLOW (NEW) */
+.hero{
+    padding:30px 0 10px;
+    text-shadow:0 0 25px rgba(245,215,110,.35);
+}
+
+/* CONTAINER */
 .container{
     max-width:900px;
     margin:auto;
@@ -77,12 +83,20 @@ body{
 .verse{
     font-size:20px;
     color:#f5d76e;
-    margin-bottom:50px;
-    animation:fadeVerse 2.5s ease;
+    margin-bottom:30px;
+    animation:fadeVerse 3s ease;
 }
 @keyframes fadeVerse{
-    from{opacity:0;transform:translateY(20px)}
+    from{opacity:0;transform:translateY(25px)}
     to{opacity:1;transform:translateY(0)}
+}
+
+/* 🎯 TODAY FOCUS (NEW) */
+.focus{
+    font-size:15px;
+    color:#ddd;
+    margin-bottom:45px;
+    opacity:.85;
 }
 
 /* CARDS */
@@ -102,8 +116,8 @@ body{
     transition:.4s;
 }
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 45px rgba(255,215,100,.6);
+    transform:translateY(-12px) scale(1.02);
+    box-shadow:0 0 50px rgba(255,215,100,.65);
 }
 .card a{
     display:inline-block;
@@ -128,6 +142,19 @@ body{
     font-size:18px;
     cursor:pointer;
     box-shadow:0 0 15px rgba(255,215,100,.6);
+    z-index:10;
+}
+
+/* ⬇️ SCROLL HINT (NEW) */
+.scroll-hint{
+    margin-top:35px;
+    font-size:13px;
+    color:#aaa;
+    animation:blink 1.5s infinite;
+}
+@keyframes blink{
+    0%,100%{opacity:.3}
+    50%{opacity:1}
 }
 
 /* 📱 MOBILE */
@@ -146,20 +173,24 @@ body{
 <div class="parallax"></div>
 <div class="cross"></div>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" preload="auto" loop>
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b3cdd0efc.mp3" type="audio/mpeg">
 </audio>
+
 <button class="music-btn" onclick="toggleMusic(this)">🔊</button>
 
 <div class="overlay">
 <div class="container">
 
+<div class="hero">
 <h1 style="font-size:44px;margin-bottom:10px;">ആത്മീയ വഴികൾ</h1>
-<p style="color:#ccc;margin-bottom:25px;">
+<p style="color:#ccc;margin-bottom:20px;">
 ദൈവത്തെ അറിയാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ • വിശ്വാസത്തിൽ വളരാൻ
 </p>
+</div>
 
 <div id="verse" class="verse"></div>
+<div class="focus">ഇന്നത്തെ ആത്മീയ ചിന്ത — ഹൃദയം ദൈവത്തോട് അടുപ്പിക്കൂ</div>
 
 <div class="cards">
 <div class="card">
@@ -181,12 +212,16 @@ body{
 </div>
 </div>
 
+<div class="scroll-hint">⬇️ Scroll slowly</div>
+
 </div>
 </div>
 
 <script>
-/* 🔄 LOADER FIX */
-window.onload=()=>document.getElementById("loader").style.display="none";
+/* 🔄 LOADER */
+window.addEventListener("load",()=>{
+    document.getElementById("loader").style.display="none";
+});
 
 /* 📖 DAILY VERSE */
 const verses=[
@@ -199,12 +234,12 @@ const verses=[
 document.getElementById("verse").innerText=
 verses[new Date().getDate()%verses.length];
 
-/* 🔔 MUSIC FIX */
+/* 🔔 MUSIC (MOBILE SAFE) */
 const music=document.getElementById("bgMusic");
 let playing=false;
 function toggleMusic(btn){
     if(!playing){
-        music.play();
+        music.play().catch(()=>{});
         btn.innerText="🔇";
     }else{
         music.pause();
