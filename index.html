@@ -48,11 +48,11 @@ body{
     pointer-events:none;
 }
 
-/* 🌑 EXTRA DEPTH LAYER (NEW) */
+/* 🌑 DEPTH */
 .depth{
     position:fixed;
     inset:0;
-    background:radial-gradient(circle at top, rgba(0,0,0,.3), rgba(0,0,0,.85));
+    background:radial-gradient(circle at top, rgba(0,0,0,.3), rgba(0,0,0,.9));
     z-index:-1;
     pointer-events:none;
 }
@@ -63,7 +63,7 @@ body{
     inset:0;
     background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Christian_cross.svg/512px-Christian_cross.svg.png')
     center/35% no-repeat;
-    opacity:0.08;
+    opacity:0.07;
     z-index:-2;
     pointer-events:none;
 }
@@ -82,72 +82,86 @@ body{
     text-align:center;
 }
 
-/* ✨ VERSE */
-.verse{
-    font-size:20px;
-    color:#f5d76e;
-    margin-bottom:8px;
-    animation:fadeVerse 2.5s ease;
+/* 🌟 HERO */
+.hero{
+    animation:heroFade 1.5s ease forwards;
+    text-shadow:0 0 30px rgba(245,215,110,.35);
 }
-@keyframes fadeVerse{
-    from{opacity:0;transform:translateY(25px)}
+@keyframes heroFade{
+    from{opacity:0;transform:translateY(20px)}
     to{opacity:1;transform:translateY(0)}
 }
 
-/* 🎯 PURPOSE LINE (NEW) */
+/* 📖 VERSE */
+.verse-label{
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:6px;
+}
+.verse{
+    font-size:20px;
+    color:#f5d76e;
+    margin-bottom:10px;
+    position:relative;
+    overflow:hidden;
+}
+.verse::after{
+    content:"";
+    position:absolute;
+    top:0;left:-100%;
+    width:100%;height:100%;
+    background:linear-gradient(120deg, transparent, rgba(255,255,255,.3), transparent);
+    animation:shimmer 4s infinite;
+}
+@keyframes shimmer{
+    to{left:100%}
+}
+
+/* PURPOSE */
 .purpose{
     font-size:13px;
     color:#bbb;
     margin-bottom:35px;
 }
 
-/* 🌟 HIGHLIGHT (NEW) */
-.highlight{
-    font-size:15px;
-    color:#ddd;
-    margin-bottom:45px;
-    opacity:.85;
-}
-
 /* CARDS */
 .cards{
     display:flex;
-    gap:25px;
+    gap:28px;
     flex-wrap:wrap;
     justify-content:center;
 }
 .card{
     background:rgba(255,255,255,0.95);
     color:#111;
-    padding:28px;
+    padding:30px;
     width:260px;
     border-radius:14px;
     box-shadow:0 0 25px rgba(255,215,100,.25);
     transition:.4s;
-    opacity:0;
-    transform:translateY(30px);
-    animation:cardIn .9s forwards;
 }
-.card:nth-child(2){animation-delay:.15s}
-.card:nth-child(3){animation-delay:.3s}
-
-@keyframes cardIn{
-    to{opacity:1;transform:translateY(0)}
-}
-
 .card:hover{
-    transform:translateY(-12px) scale(1.02);
-    box-shadow:0 0 50px rgba(255,215,100,.65);
+    transform:translateY(-12px);
+    box-shadow:0 0 55px rgba(255,215,100,.7);
 }
-
 .card a{
     display:inline-block;
-    margin-top:12px;
-    padding:10px 20px;
+    margin-top:14px;
+    padding:11px 22px;
     background:#111;
     color:#f5d76e;
     text-decoration:none;
     border-radius:8px;
+    font-size:14px;
+}
+.sub{
+    font-size:12px;
+    color:#777;
+}
+
+/* 🎥 HIGHLIGHT VIDEO */
+.card.video{
+    outline:2px solid rgba(245,215,110,.5);
 }
 
 /* 🔔 MUSIC */
@@ -166,14 +180,34 @@ body{
     z-index:10;
 }
 
-/* 📢 SHARE PROMPT (NEW) */
-.share{
-    margin-top:55px;
-    font-size:14px;
-    color:#aaa;
+/* 🔔 MUSIC HINT */
+.music-hint{
+    position:fixed;
+    bottom:80px;
+    right:20px;
+    background:#111;
+    color:#f5d76e;
+    padding:10px 14px;
+    font-size:13px;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(255,215,100,.5);
+    animation:fadeOut 3s forwards;
+}
+@keyframes fadeOut{
+    0%{opacity:1}
+    80%{opacity:1}
+    100%{opacity:0}
 }
 
-/* 📜 FOOTER VERSE (NEW) */
+/* ✝️ WHY */
+.why{
+    margin-top:70px;
+    font-size:15px;
+    color:#ddd;
+    line-height:1.6;
+}
+
+/* FOOTER */
 .footer{
     margin-top:70px;
     font-size:13px;
@@ -200,58 +234,64 @@ body{
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b3cdd0efc.mp3" type="audio/mpeg">
 </audio>
 
+<div class="music-hint">🔔 Tap for worship music</div>
 <button class="music-btn" onclick="toggleMusic(this)">🔊</button>
 
 <div class="overlay">
 <div class="container">
 
+<div class="hero">
 <h1 style="font-size:44px;margin-bottom:10px;">ആത്മീയ വഴികൾ</h1>
 <p style="color:#ccc;margin-bottom:20px;">
 ദൈവത്തെ അറിയാൻ • ആത്മാവിനെ ശക്തമാക്കാൻ • വിശ്വാസത്തിൽ വളരാൻ
 </p>
+</div>
 
+<div class="verse-label">📖 Today’s Word</div>
 <div id="verse" class="verse"></div>
-<div class="purpose">Today’s Word • Reflect • Pray • Share</div>
-<div class="highlight">✨ ഇന്നത്തെ ആത്മീയ ചിന്ത — ഹൃദയം ദൈവത്തോട് അടുപ്പിക്കൂ</div>
+<div class="purpose">Reflect • Pray • Share</div>
 
 <div class="cards">
 <div class="card">
 <h3>📖 Articles</h3>
 <p>ബൈബിൾ, ചരിത്രം, ആത്മീയ ചിന്തകൾ</p>
 <a href="articles.html">Read</a>
+<div class="sub">Read Now</div>
 </div>
 
-<div class="card">
+<div class="card video">
 <h3>🎥 Videos</h3>
 <p>YouTube ആത്മീയ വീഡിയോ ഉള്ളടക്കം</p>
 <a href="videos.html">Watch</a>
+<div class="sub">Watch Now</div>
 </div>
 
 <div class="card">
 <h3>🌱 Story</h3>
 <p>ഹൃദയത്തെ സ്പർശിക്കുന്ന ആത്മീയ കഥകൾ</p>
 <a href="story.html">Read</a>
+<div class="sub">Read Now</div>
 </div>
 </div>
 
-<div class="share">
-📤 Share today’s verse with someone who needs hope
+<div class="why">
+✝️ ഈ പേജ് സൃഷ്ടിച്ചത് വിശ്വാസം ശക്തമാക്കാൻ, പ്രത്യാശ നൽകാൻ,  
+യേശുക്രിസ്തുവിന്റെ സ്നേഹം പങ്കുവെക്കാൻ.
 </div>
 
 <div class="footer">
-“He who has ears, let him hear.” – Matthew 11:15
+Created for God’s glory ✝️
 </div>
 
 </div>
 </div>
 
 <script>
-/* 🔄 LOADER */
 window.addEventListener("load",()=>{
     document.getElementById("loader").style.display="none";
 });
 
-/* 📖 DAILY VERSE */
+/* DAILY VERSE */
 const verses=[
 "കർത്താവാണ് എന്റെ ഇടയൻ; എനിക്ക് ഒന്നിനും കുറവില്ല. (സങ്കീ 23:1)",
 "ദൈവം സ്നേഹമാണ്. (1 യോഹ 4:8)",
@@ -262,7 +302,7 @@ const verses=[
 document.getElementById("verse").innerText=
 verses[new Date().getDate()%verses.length];
 
-/* 🔔 MUSIC */
+/* MUSIC */
 const music=document.getElementById("bgMusic");
 let playing=false;
 function toggleMusic(btn){
@@ -275,12 +315,6 @@ function toggleMusic(btn){
     }
     playing=!playing;
 }
-
-/* 🌌 PARALLAX */
-window.addEventListener("scroll",()=>{
-document.querySelector(".parallax").style.transform=
-`scale(1.1) translateY(${window.scrollY*0.2}px)`;
-});
 </script>
 
 </body>
