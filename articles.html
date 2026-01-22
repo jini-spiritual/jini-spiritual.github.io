@@ -44,12 +44,22 @@ body{
   display:flex;
   gap:20px;
   background:#fff;
-  margin-bottom:20px;
+  margin-bottom:25px;
   padding:15px;
-  border-radius:10px;
+  border-radius:12px;
   text-decoration:none;
   color:#000;
-  box-shadow:0 5px 15px rgba(0,0,0,.08);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  opacity:0;
+  transform:translateY(20px);
+  transition:.6s ease;
+}
+.news-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.news-card.latest{
+  border:2px solid #f5d76e;
 }
 .news-card img{
   width:220px;
@@ -66,8 +76,25 @@ body{
   color:#555;
   line-height:1.6;
 }
-.news-card:hover{
-  transform:translateY(-3px);
+.read-btn{
+  margin-top:10px;
+  display:inline-block;
+  padding:6px 14px;
+  background:#111;
+  color:#f5d76e;
+  font-size:13px;
+  border-radius:20px;
+}
+
+/* 📖 BADGE */
+.badge{
+  display:inline-block;
+  background:#111;
+  color:#f5d76e;
+  padding:4px 12px;
+  font-size:13px;
+  border-radius:20px;
+  margin-bottom:10px;
 }
 
 /* 📄 ARTICLE */
@@ -111,11 +138,14 @@ hr{margin:60px 0}
 <!-- 📰 NEWS MODEL VIEW -->
 <div class="news-list">
 
-<a class="news-card" href="#article1">
+<!-- ⭐ LATEST ARTICLE -->
+<a class="news-card latest" href="#article1">
   <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65" alt="">
   <div>
+    <span class="badge">📖 Today’s Word</span>
     <h3>യേശു എന്ന നാമത്തിന് പിന്നിലെ അദൃശ്യശക്തി</h3>
     <p>ചരിത്രവും യാഥാർത്ഥ്യവും പരിശോധിക്കുന്ന ആത്മീയ വിശകലനം…</p>
+    <span class="read-btn">📖 Read Article</span>
   </div>
 </a>
 
@@ -124,12 +154,13 @@ hr{margin:60px 0}
   <div>
     <h3>അബ്രഹാമിന്റെ അദൃശ്യ പോരാട്ടം</h3>
     <p>യുദ്ധം, വിശ്വാസം, ഭീമാകാരന്മാർ – ബൈബിളിലെ മറഞ്ഞ കഥ…</p>
+    <span class="read-btn">📖 Read Article</span>
   </div>
 </a>
 
 </div>
 
-<!-- 📄 ARTICLE CONTENT -->
+<!-- 📄 ARTICLE CONTENT (UNTOUCHED) -->
 <div class="article" id="article1">
 
 <h1>യേശു എന്ന നാമത്തിന് പിന്നിലെ അദൃശ്യശക്തി: ചരിത്രവും യാഥാർത്ഥ്യവും</h1>
@@ -174,6 +205,16 @@ hr{margin:60px 0}
 <p><a href="index.html">← Home</a></p>
 
 </div>
+
+<script>
+const cards = document.querySelectorAll('.news-card');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show');
+  });
+});
+cards.forEach(c=>obs.observe(c));
+</script>
 
 </body>
 </html>
