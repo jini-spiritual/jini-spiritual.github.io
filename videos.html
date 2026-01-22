@@ -4,28 +4,23 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3BS96KQF5Z');
 </script>
+
 <!DOCTYPE html>
 <html lang="ml">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ആത്മീയ വഴികൾ | Videos</title>
-<meta name="description" content="ആത്മീയ വീഡിയോസ് – YouTube Spiritual videos">
-<meta name="keywords" content="spiritual videos, Bible videos, YouTube videos">
-<meta name="author" content="Athemiya Vazhikal">
 
 <style>
-/* Same style as index (no visual change) */
 *{box-sizing:border-box}
 body{
  margin:0;
  font-family:"Segoe UI",Arial,sans-serif;
  background:#000;
  color:#fff;
- overflow-x:hidden;
 }
 nav{
  background:#111;
@@ -38,18 +33,55 @@ nav a{
  text-decoration:none;
  font-weight:bold;
 }
-iframe{
- width:100%;
- height:300px;
- border:none;
- border-radius:12px;
- margin-bottom:30px;
-}
+
+/* BOX MODE */
 .container{
- max-width:900px;
+ max-width:1000px;
  margin:auto;
  padding:40px 20px;
- text-align:center;
+}
+.video-box{
+ display:flex;
+ gap:20px;
+ background:#111;
+ padding:18px;
+ border-radius:14px;
+ margin-bottom:25px;
+ text-decoration:none;
+ color:#fff;
+ transition:.3s;
+}
+.video-box:hover{
+ transform:translateY(-4px);
+ box-shadow:0 0 20px rgba(245,215,110,.4);
+}
+.video-box img{
+ width:260px;
+ height:150px;
+ object-fit:cover;
+ border-radius:10px;
+}
+.video-box h3{
+ margin:0 0 10px;
+ color:#f5d76e;
+}
+.video-box p{
+ margin:0;
+ color:#ccc;
+}
+.watch{
+ margin-top:12px;
+ display:inline-block;
+ padding:8px 18px;
+ background:#000;
+ color:#f5d76e;
+ border-radius:20px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+ .video-box{flex-direction:column}
+ .video-box img{width:100%; height:180px}
 }
 </style>
 </head>
@@ -66,10 +98,32 @@ iframe{
 <div class="container">
 <h1>🎥 Videos</h1>
 
-<!-- Video embeds -->
-<iframe src="https://www.youtube.com/embed/jVdmx9KAuIs" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/thSYFa-pTW8" allowfullscreen></iframe>
-<iframe src="https://www.youtube.com/embed/0mhy2eg4ZDo" allowfullscreen></iframe>
+<a class="video-box" href="video-1.html">
+  <img src="https://img.youtube.com/vi/jVdmx9KAuIs/hqdefault.jpg">
+  <div>
+    <h3>Spiritual Video 1</h3>
+    <p>ആത്മീയ സന്ദേശം</p>
+    <span class="watch">▶ Watch Video</span>
+  </div>
+</a>
+
+<a class="video-box" href="video-2.html">
+  <img src="https://img.youtube.com/vi/thSYFa-pTW8/hqdefault.jpg">
+  <div>
+    <h3>Spiritual Video 2</h3>
+    <p>ബൈബിൾ ആധാരമായ സന്ദേശം</p>
+    <span class="watch">▶ Watch Video</span>
+  </div>
+</a>
+
+<a class="video-box" href="video-3.html">
+  <img src="https://img.youtube.com/vi/0mhy2eg4ZDo/hqdefault.jpg">
+  <div>
+    <h3>Spiritual Video 3</h3>
+    <p>വിശ്വാസ ജീവിതം</p>
+    <span class="watch">▶ Watch Video</span>
+  </div>
+</a>
 
 </div>
 </body>
