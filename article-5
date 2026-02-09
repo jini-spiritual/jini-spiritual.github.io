@@ -8,8 +8,8 @@
 
 <meta property="og:title" content="നിഗൂഢതകളുടെ വേദപുസ്തകം">
 <meta property="og:description" content="സ്വർഗ്ഗത്തിന്റെ രഹസ്യങ്ങളിലൂടെ ഒരു യാത്ര">
-<meta property="og:image" content="https://jineeshsys.com/story-5.jpg">
-<meta property="og:url" content="https://jineeshsys.com/story-5.html">
+<meta property="og:image" content="https://jineeshsys.com/article-5.jpg">
+<meta property="og:url" content="https://jineeshsys.com/article-5.html">
 <meta property="og:type" content="article">
 
 <style>
@@ -38,7 +38,7 @@ nav a{
   background:#0b0b0b;
   border-radius:16px;
 }
-.story-img{
+.article-img{
   width:100%;
   max-height:420px;
   object-fit:cover;
@@ -49,6 +49,11 @@ h1{
   text-align:center;
   color:#f5d76e;
   margin-bottom:30px;
+}
+pre{
+  white-space:pre-wrap;
+  font-family:inherit;
+  font-size:16px;
 }
 .author{
   margin-top:40px;
@@ -70,10 +75,11 @@ h1{
 
 <div class="container">
 
-<img src="story-5.jpg" class="story-img" alt="നിഗൂഢതകളുടെ വേദപുസ്തകം">
+<img src="article-5.jpg" class="article-img" alt="നിഗൂഢതകളുടെ വേദപുസ്തകം">
 
 <h1>നിഗൂഢതകളുടെ വേദപുസ്തകം: സ്വർഗ്ഗത്തിന്റെ രഹസ്യങ്ങളിലൂടെ ഒരു യാത്ര</h1>
 
+<pre>
 നിഗൂഢതകളുടെ വേദപുസ്തകം: സ്വർഗ്ഗത്തിന്റെ രഹസ്യങ്ങളിലൂടെ ഒരു യാത്ര
 വിശുദ്ധ വേദപുസ്തകത്തിൽ പരാമർശിച്ചിരിക്കുന്ന, എന്നാൽ ഇന്നും മനുഷ്യബുദ്ധിക്ക് അപ്രാപ്യമായ നിഗൂഢ ജീവികളെക്കുറിച്ച് എത്രപേർക്കറിയാം? ചിലത് നമുക്ക് പരിചിതമെങ്കിൽ, മറ്റു ചിലത് ഇന്നും അന്ധകാരത്തിന്റെ മറപറ്റി നിൽക്കുന്നു. സ്വർഗ്ഗീയ കെരൂപുകൾ മുതൽ സാറാഫുകൾ വരെയും, ചിറകുകളുള്ള ഗംഭീരമായ രൂപങ്ങൾ വരെയും നീളുന്ന ദൈവീക സൃഷ്ടികൾ ആശയക്കുഴപ്പങ്ങൾക്കും അപ്പുറമാണ്. അതുപോലെതന്നെ, 'ഭീമന്മാർ' അഥവാ നെഫിലിമുകളുടെ ഉത്ഭവവും പ്രകൃതിയും അനന്തമായ സംവാദങ്ങൾക്ക് തിരികൊളുത്തിയിരിക്കുന്നു.
 
@@ -140,7 +146,7 @@ h1{
 
 ഏതു പുസ്തകമെടുത്താലും അതിൽ അനേകം രഹസ്യങ്ങൾ ഒളിഞ്ഞിരിപ്പുണ്ട്. കാര്യങ്ങൾ കൂടുതൽ പഠിക്കുംതോറും, വേദപുസ്തകം വായിക്കാനുള്ള താല്പര്യം വർദ്ധിച്ചുകൊണ്ടേയിരിക്കുന്നു. നിഗൂഢമായ ജീവികൾ, നെഫിലിമുകൾ, ആർക്കും വ്യാഖ്യാനിക്കാൻ കഴിയാത്ത ദൈവീക ഇടപെടലുകൾ... ഇതിൽ നിന്ന് എനിക്കൊരു കാര്യം വ്യക്തമായി: ആർക്കും പൂർണ്ണമായി വ്യാഖ്യാനിച്ചെടുക്കാൻ പറ്റാത്ത രീതിയിൽ, നിഗൂഢമായ ദൈവത്തിന്റെ ഇടപെടലുകളെ വിശദീകരിക്കുന്ന അത്ഭുത ഗ്രന്ഥമാണ് വേദപുസ്തകം.
 
-Br Jineesh Punalur
+</pre>
 
 <div class="author">— Br Jineesh Punalur</div>
 
