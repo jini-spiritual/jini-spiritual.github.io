@@ -609,15 +609,15 @@
           
           <!-- Playlist Container -->
           <ul class="playlist">
-            <li id="song1" class="playlist-item active" onclick="playSelectSong(0)">
+            <li id="song-0" class="playlist-item active" onclick="playSelectSong(0)">
               <span class="song-name">ആരാധന ഗീതം 1 (worship)</span>
               <span class="playing-indicator">▶</span>
             </li>
-            <li id="song2" class="playlist-item" onclick="playSelectSong(1)">
+            <li id="song-1" class="playlist-item" onclick="playSelectSong(1)">
               <span class="song-name">ആരാധന ഗീതം 2 (spiritual)</span>
               <span class="playing-indicator">▶</span>
             </li>
-            <li id="song3" class="playlist-item" onclick="playSelectSong(2)">
+            <li id="song-2" class="playlist-item" onclick="playSelectSong(2)">
               <span class="song-name">ആരാധന ഗീതം 3 (ambient)</span>
               <span class="playing-indicator">▶</span>
             </li>
@@ -721,8 +721,8 @@
             playing = true;
           })
           .catch(err => {
-            console.log("Local audio file not found yet or playback blocked.", err);
-            statusText.innerText = "Please copy your song files into the folder.";
+            console.error("Playback error:", err);
+            statusText.innerText = "Playback blocked or error: " + err.message;
           });
       } else {
         music.pause();
@@ -750,6 +750,22 @@
     // Auto-advance to next song on end
     music.addEventListener("ended", () => {
       nextSong();
+    });
+
+    // Detailed error handling for media loading issues
+    music.addEventListener("error", () => {
+      const err = music.error;
+      console.error("Audio error details:", err);
+      if (err) {
+        let msg = "Error loading song";
+        if (err.code === 1) msg = "Playback aborted by user/browser";
+        if (err.code === 2) msg = "Network error loading song";
+        if (err.code === 3) msg = "Audio decode failed (corrupted file)";
+        if (err.code === 4) msg = "Song file not found (404) or unsupported format";
+        statusText.innerText = msg + " (Code " + err.code + ")";
+      } else {
+        statusText.innerText = "Error loading song";
+      }
     });
 
     // Initialize UI on load
