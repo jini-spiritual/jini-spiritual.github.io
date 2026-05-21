@@ -610,15 +610,15 @@
           <!-- Playlist Container -->
           <ul class="playlist">
             <li id="song-0" class="playlist-item active" onclick="playSelectSong(0)">
-              <span class="song-name">ആരാധന ഗീതം 1 (worship)</span>
+              <span class="song-name">🔊 Test Song (Internet Playback Test)</span>
               <span class="playing-indicator">▶</span>
             </li>
             <li id="song-1" class="playlist-item" onclick="playSelectSong(1)">
-              <span class="song-name">ആരാധന ഗീതം 2 (spiritual)</span>
+              <span class="song-name">ആരാധന ഗീതം 1 (worship)</span>
               <span class="playing-indicator">▶</span>
             </li>
             <li id="song-2" class="playlist-item" onclick="playSelectSong(2)">
-              <span class="song-name">ആരാധന ഗീതം 3 (ambient)</span>
+              <span class="song-name">ആരാധന ഗീതം 2 (spiritual)</span>
               <span class="playing-indicator">▶</span>
             </li>
           </ul>
@@ -673,16 +673,16 @@
     /* PLAYLIST AUDIO CONTROLLER WITH LOCAL SONG FALLBACKS */
     const songs = [
       {
+        name: "Test Song (Internet Playback Test)",
+        url: "https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3"
+      },
+      {
         name: "ആരാധന ഗീതം 1",
         url: "song1.mp3"
       },
       {
         name: "ആരാധന ഗീതം 2",
         url: "song2.mp3"
-      },
-      {
-        name: "ആരാധന ഗീതം 3",
-        url: "song3.mp3"
       }
     ];
 
