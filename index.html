@@ -479,6 +479,32 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* 🔗 VIEW ALL ARTICLES BUTTON */
+    .view-all-container {
+      text-align: center;
+      margin: 35px 0 15px;
+    }
+    .view-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 30px;
+      background-color: var(--primary-red);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(127, 29, 29, 0.15);
+      transition: all 0.25s ease;
+      font-family: 'Manjari', 'Outfit', sans-serif;
+    }
+    .view-all-btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(127, 29, 29, 0.25);
+    }
   </style>
 </head>
 
@@ -504,6 +530,7 @@
       <a href="articles.html">📖 Articles</a>
       <a href="videos.html">🎥 Videos</a>
       <a href="story.html">🌱 Stories</a>
+      <a href="contact.html">📞 Contact</a>
     </nav>
   </div>
 
@@ -555,19 +582,13 @@
             <a href="article-6.html" class="read-more-btn">Read Article ➔</a>
           </div>
         </article>
+      </div>
 
-        <!-- Article Card 4 -->
-        <article class="portal-card">
-          <div class="card-image" style="background-image: url('story-2.jpg');"></div>
-          <div class="card-content">
-            <div>
-              <span class="badge">കഥകൾ</span>
-              <h3><a href="story.html">ഹൃദയത്തെ സ്പർശിക്കുന്ന ആത്മീയ കഥകൾ</a></h3>
-              <p>യേശുക്രിസ്തുവിന്റെ സ്നേഹവും ദൈവത്തിന്റെ കരുതലും വെളിപ്പെടുത്തുന്ന പ്രത്യാശയും വിശ്വാസവും പകരുന്ന കഥകൾ.</p>
-            </div>
-            <a href="story.html" class="read-more-btn">Read Stories ➔</a>
-          </div>
-        </article>
+      <!-- View All Button -->
+      <div class="view-all-container">
+        <a href="articles.html" class="view-all-btn">
+          കൂടുതൽ ലേഖനങ്ങൾ കാണുക (View More Articles) ➔
+        </a>
       </div>
     </main>
 
