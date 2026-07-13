@@ -168,10 +168,10 @@
       gap: 8px;
     }
 
-    /* Two-Column Grid for Articles */
+    /* Three-Column Grid for Articles */
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 25px;
       margin-bottom: 25px;
     }
@@ -461,6 +461,12 @@
     }
 
     /* 📱 RESPONSIVE PORTAL BREAKPOINTS */
+    @media (max-width: 960px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 860px) {
       .main-wrapper {
         grid-template-columns: 1fr;
@@ -543,17 +549,17 @@
         Latest Updates
       </div>
 
-       <div class="featured-grid">
-        <!-- Featured Card 1 (Story 5 - Latest) -->
-        <article class="portal-card news-card">
-          <div class="card-image" style="background-image: url('story-5.jpg');"></div>
+      <div class="articles-grid">
+        <!-- Article Card 14 (Latest Featured) -->
+        <article class="portal-card">
+          <div class="card-image" style="background-image: url('article-14.jpg');"></div>
           <div class="card-content">
             <div>
-              <span class="badge">കഥകൾ</span>
-              <h3><a href="story-5.html">സോളമന്റെ യാത്ര</a></h3>
-              <p>സോളമൻ എന്ന സൽസ്വഭാവിയായ മനുഷ്യന്റെ ജീവിതത്തെയും അവന്റെ സ്വർഗ്ഗീയ ദർശനത്തെയും വചനസത്യത്തെയും കുറിച്ചുള്ള ഒരു അനുഗ്രഹീത ക്രിസ്തീയ ആത്മീയ കഥ.</p>
+              <span class="badge">വേദപുസ്തകം</span>
+              <h3><a href="article-14.html">ദൈവത്തിന്റെ തക്കസമയം: കാത്തിരിപ്പിന്റെ സൗന്ദര്യം</a></h3>
+              <p>ദൈവത്തിന്റെ സമയം എപ്പോഴും തികവുള്ളതാണ്. ലാസറിന്റെ ഉയിർത്തെഴുന്നേല്പിലൂടെയും വചനസത്യങ്ങളിലൂടെയും ദൈവത്തിന്റെ തക്കസമയത്തിനായി കാത്തിരിക്കുന്നതിന്റെ ആത്മീയ പ്രാധാന്യത്തെക്കുറിച്ചുള്ള ചിന്തകൾ.</p>
             </div>
-            <a href="story-5.html" class="read-more-btn">Read Story ➔</a>
+            <a href="article-14.html" class="read-more-btn">Read Article ➔</a>
           </div>
         </article>
 
@@ -588,6 +594,29 @@
       <div class="view-all-container">
         <a href="articles.html" class="view-all-btn">
           കൂടുതൽ ലേഖനങ്ങൾ കാണുക (View More Articles) ➔
+        </a>
+      </div>
+
+      <!-- New Featured Story Section -->
+      <div class="feed-title" style="margin-top: 40px;">
+        Latest Story
+      </div>
+
+      <div class="portal-card" style="display: flex; flex-direction: row; align-items: center; gap: 20px; padding: 15px; border-radius: 12px; margin-bottom: 25px; height: auto;">
+        <div class="card-image" style="background-image: url('story-5.jpg'); width: 220px; height: 124px; aspect-ratio: 16 / 9; border-radius: 8px; flex-shrink: 0; background-size: cover; background-position: center; transition: none;"></div>
+        <div class="card-content" style="padding: 0; display: flex; flex-direction: column; justify-content: center; gap: 6px; flex-grow: 1;">
+          <div>
+            <span class="badge" style="margin-bottom: 2px;">കഥകൾ</span>
+            <h3 style="font-size: 20px; line-height: 1.3; margin-bottom: 4px;"><a href="story-5.html">സോളമന്റെ യാത്ര</a></h3>
+            <p style="font-size: 13.5px; color: var(--text-body); line-height: 1.5; margin: 0;">സോളമൻ എന്ന സൽസ്വഭാവിയായ മനുഷ്യന്റെ ജീവിതത്തെയും അവന്റെ സ്വർഗ്ഗീയ ദർശനത്തെയും വചനസത്യത്തെയും കുറിച്ചുള്ള ഒരു അനുഗ്രഹീത ആത്മീയ കഥ.</p>
+          </div>
+          <a href="story-5.html" class="read-more-btn" style="font-size: 13px; font-weight: 700; color: var(--primary-red); text-decoration: none; display: inline-flex; align-items: center; margin-top: 4px;">Read Story ➔</a>
+        </div>
+      </div>
+
+      <div class="view-all-container" style="margin: 15px 0 25px 0;">
+        <a href="story.html" class="view-all-btn" style="background-color: var(--accent-gold); box-shadow: 0 4px 12px rgba(180, 83, 9, 0.15);">
+          കൂടുതൽ കഥകൾ കാണുക (View More Stories) ➔
         </a>
       </div>
     </main>
